@@ -6,14 +6,13 @@ import requests
 postings = { }
 
 
-
 page = 0
 
 for x in range(0, 3):
 
 	page = 0
 
-	r = requests.get('http://search.3taps.com/?auth_token=bfab94b0cc726e2bb24123a0c3babd7d&text=airstream' + '&page=' + str(page) + '&tier='+ str(x))
+	r = requests.get('http://search.3taps.com/?auth_token=bfab94b0cc726e2bb24123a0c3babd7d&text=airstream&has_price=1&retvals=id,account_id,source,category,category_group,location,external_id,external_url,heading,body,timestamp,expires,language,price,currency,images,annotations,status' + '&page=' + str(page) + '&tier='+ str(x))
 	counties = r.json()
 	if counties['success']:
 		page = counties['next_page']
@@ -24,7 +23,7 @@ for x in range(0, 3):
 
 	while page != 0:
 		page += 1
-		r = requests.get('http://search.3taps.com/?auth_token=bfab94b0cc726e2bb24123a0c3babd7d&text=airstream' + '&page=' + str(page) + '&tier=' + str(x))
+		r = requests.get('http://search.3taps.com/?auth_token=bfab94b0cc726e2bb24123a0c3babd7d&text=airstream&has_price=1&retvals=id,account_id,source,category,category_group,location,external_id,external_url,heading,body,timestamp,expires,language,price,currency,images,annotations,status' + '&page=' + str(page) + '&tier=' + str(x))
 		counties = r.json()
 		if counties['success']:
 			page = counties['next_page']
