@@ -3,12 +3,22 @@ import json
 import urllib
 import requests
 
-postings = { }
+######################################################
+#           DEVELOPMENT MODE set to TRUE             #
+#           PRODUCTION MODE set to FALSE             #
+######################################################
+in_development = True
 
+if in_development == True:
+	n = 1
+else:
+	n = 3
+
+postings = { }
 
 page = 0
 
-for x in range(0, 3):
+for x in range(0, n):
 
 	page = 0
 
