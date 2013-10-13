@@ -7,7 +7,7 @@ import requests
 #           DEVELOPMENT MODE set to TRUE             #
 #           PRODUCTION MODE set to FALSE             #
 ######################################################
-in_development = True
+in_development = False
 
 if in_development == True:
 	n = 1
